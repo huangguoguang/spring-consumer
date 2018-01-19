@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * User : huangguang
  * DATE : 2018-01-18 17:38
  */
-@FeignClient(value = "spring-cloud-producer")
+@FeignClient(name = "spring-cloud-producer", fallback = HelloServiceHystrix.class)
 public interface HelloService {
 
     @RequestMapping(value = "hello")
